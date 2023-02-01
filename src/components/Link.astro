@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import classNames from "classnames";
+
+type Props = HTMLAttributes<"a"> & { capitalize?: boolean };
+const { capitalize = true, ...attrs } = Astro.props;
+---
+
+<a
+  href="#"
+  {...attrs}
+  class={classNames(
+    "text-md font-roboto font-light underline underline-offset-4 hover:text-[#f0c2b2] ",
+    {
+      capitalize: capitalize,
+    }
+  )}><slot /></a
+>
